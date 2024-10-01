@@ -1,0 +1,30 @@
+﻿@model CepEduardoHoffmam.Models.CepModel
+
+<div class="container mt-5">
+    <h2>Consulta de CEP</h2>
+    <form asp-action="Search" method="post">
+        <div class="form-group">
+            <label for="cep">Digite o CEP: </label>
+            <input type="text" id="cep" name="cep" class="form-control" placeholder="00000-000" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+    @if (Model != null)
+    {
+        <div class="mt-4">
+            <h4>Resultado</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>CEP:</strong> @Model.Cep</li>
+                <li class="list-group-item"><strong>Logradouro:</strong> @Model.Logradouro</li>
+                <li class="list-group-item"><strong>Complemento:</strong> @Model.Complemento</li>
+                <li class="list-group-item"><strong>Bairro:</strong> @Model.Bairro</li>
+                <li class="list-group-item"><strong>Localidade:</strong> @Model.Localidade</li>
+                <li class="list-group-item"><strong>UF:</strong> @Model.UF</li>
+                <li class="list-group-item"><strong>IBGE:</strong> @Model.Ibge</li>
+                <li class="list-group-item"><strong>GIA:</strong> @Model.Gia</li>
+                <li class="list-group-item"><strong>DDD:</strong> @Model.Ddd</li>
+                <li class="list-group-item"><strong>SIAFI:</strong> @Model.SiaFi</li>
+            </ul>
+        </div>
+    }
+</div>
